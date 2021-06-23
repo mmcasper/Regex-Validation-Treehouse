@@ -25,7 +25,8 @@ function isValidPassword(password) {
 
 // The telephone number must be in the format of (555) 555-5555
 function isValidTelephone(telephone) {
-  return /^\(d{3}\)\s\d{3}-\d{4}$/.test(telephone);
+  //return /^\(d{3}\)\s\d{3}-\d{4}$/.test(telephone);
+  return /^\D*\d{3}\D*\d{3}\D*\d{4}\D*$/.test(telephone);
 }
 
 // Must be a valid email address
