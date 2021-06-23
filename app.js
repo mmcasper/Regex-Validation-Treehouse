@@ -9,17 +9,30 @@ const emailInput = document.getElementById("email");
  *  
  */
 
-// Can only contain letters a-z in lowercase
-function isValidUsername(username) {}
+// Can only contain letters a-z in lowercase/
+function isValidUsername(username) {
+  return /^[a-z]+$/.test(username);
+}
 
 // Must contain a lowercase, uppercase letter and a number
-function isValidPassword(password) {}
+function isValidPassword(password) {
+  return /[a-z]/.test(password) && 
+         /[A-Z]/.test(password) && 
+         /[0-9]/.test(password);
+
+         //'look ahead regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/
+}
 
 // The telephone number must be in the format of (555) 555-5555
-function isValidTelephone(telephone) {}
+function isValidTelephone(telephone) {
+  return /^\(d{3}\)\s\d{3}-\d{4}$/.test(telephone);
+}
 
 // Must be a valid email address
-function isValidEmail(email) {}
+function isValidEmail(email) {
+  return /\w+@\w\.\w/.test(email)
+  //return /^[^@]+@[^@]\.[a-z]+$/i.test(email);
+}
 
 /**
  * 
